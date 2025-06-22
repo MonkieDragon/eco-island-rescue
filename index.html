@@ -101,21 +101,8 @@
             </canvas>
         </div>
 
-        <!-- Define script to allow game exit -->
-        <script>
-            function notifyGameExit() {
-              if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
-                window.ReactNativeWebView.postMessage(
-                  JSON.stringify({ type: 'game_exit' })
-                );
-              } else {
-                console.warn('ReactNativeWebView not found');
-              }
-            }
-          </script>
-
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/Eco Island Rescue.js?cachebust=477506548"></script>
+        <script type="text/javascript" src="html5game/Eco Island Rescue.js?cachebust=804608751"></script>
 
         <!-- Builtin injector for injecting runner path -->
         
