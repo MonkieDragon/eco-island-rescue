@@ -2,7 +2,7 @@ console.log("Bridge JS loaded");
 
 window.restoreGameData = function (data) {
   console.warn("In windows.restoreDAta, calling gml_Script_restoreGameData");
-  gml_Script_restoreGameData(data);
+  //gml_Script_restoreGameData(data);
 };
 
 function notifyMessage(data) {
