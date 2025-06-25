@@ -1,3 +1,10 @@
+console.log("Bridge JS loaded");
+
+window.restoreGameData = function (data) {
+  console.warn("In windows.restoreDAta, calling gml_Script_restoreGameData");
+  gml_Script_restoreGameData(data);
+};
+
 function notifyGameExit() {
   if (window.ReactNativeWebView?.postMessage) {
     window.ReactNativeWebView.postMessage(
@@ -26,20 +33,5 @@ function notifyGameLoad() {
         type: "game_load",
       })
     );
-  }
-}
-
-function gameLoad(jsonString) {
-  try {
-    const data = JSON.parse(jsonString);
-
-    // Send data into a bound GML script
-    if (window.gml_Script_restoreGameData) {
-      gml_Script_restoreGameData(data);
-    } else {
-      console.warn("restoreGameData GML script not found.");
-    }
-  } catch (e) {
-    console.error("Error in loadGame:", e);
   }
 }
