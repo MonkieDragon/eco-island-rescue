@@ -5,6 +5,17 @@ window.restoreGameData = function (data) {
   gml_Script_restoreGameData(data);
 };
 
+function notifyMessage(data) {
+  if (window.ReactNativeWebView?.postMessage) {
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({
+        type: "message",
+        payload: data,
+      })
+    );
+  }
+}
+
 function notifyGameExit() {
   if (window.ReactNativeWebView?.postMessage) {
     window.ReactNativeWebView.postMessage(
