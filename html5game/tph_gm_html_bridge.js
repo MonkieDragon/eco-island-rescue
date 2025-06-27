@@ -50,3 +50,13 @@ function notifyGameLoad() {
     );
   }
 }
+
+function notifyGameSaveReset() {
+  if (window.ReactNativeWebView?.postMessage) {
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({
+        type: "reset_save",
+      })
+    );
+  }
+}
