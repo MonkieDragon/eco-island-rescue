@@ -102,7 +102,7 @@
         </div>
 
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/Eco Island Rescue.js?cachebust=782024792"></script>
+        <script type="text/javascript" src="html5game/Eco Island Rescue.js?cachebust=567963782"></script>
 
         <!-- Builtin injector for injecting runner path -->
         
@@ -115,5 +115,18 @@
     </body>
 
     <!-- Custom PostBody code is injected here -->
-    
+    <script>
+            const canv = document.getElementById("canvas");
+                
+            canv.addEventListener("touchstart", e => {
+                e.preventDefault();
+                e.stopPropagation();
+            }, { passive: false });
+                
+            canv.addEventListener('pointerdown', e => {
+              e.preventDefault();
+              e.stopPropagation();
+            }, { passive: false });
+
+        </script>
 </html>
